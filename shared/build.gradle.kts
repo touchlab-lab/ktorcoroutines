@@ -25,12 +25,12 @@ kotlin {
     sourceSets {
         val commonMain by getting {
             dependencies {
-                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core-common:1.3.5-native-mt") {
+                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.9-native-mt") {
                     version {
-                        strictly("1.3.5-native-mt")
+                        strictly("1.3.9-native-mt")
                     }
                 }
-                implementation("io.ktor:ktor-client-core:1.3.2")
+                implementation("io.ktor:ktor-client-core:1.4.0")
             }
         }
         val commonTest by getting {
@@ -42,12 +42,7 @@ kotlin {
 
         val iosMain by getting {
             dependencies {
-                implementation("io.ktor:ktor-client-ios:1.3.2")
-                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core-native:1.3.5-native-mt") {
-                    version {
-                        strictly("1.3.5-native-mt")
-                    }
-                }
+                implementation("io.ktor:ktor-client-ios:1.4.0")
             }
         }
 
