@@ -14,16 +14,23 @@ class Example {
         scope.launch {
             val breeds = client.get<String>("https://dog.ceo/api/breeds/list/all")
             println(breeds)
+            printThreadInfo()
         }
     }
 
     fun callBackground() {
         scope.launch {
             doSomeBackgroundThing()
+
         }
     }
 
     private suspend fun doSomeBackgroundThing() = withContext(Dispatchers.Default) {
         println("Not main thread")
+        printThreadInfo()
     }
+
+
 }
+
+internal expect fun printThreadInfo()
